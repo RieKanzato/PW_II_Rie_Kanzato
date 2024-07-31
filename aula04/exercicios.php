@@ -89,25 +89,13 @@
         function validarEmail($email) {
 
             if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                return true;
+                return "o email é válido";
             } else {
-                return false;
+                return "o email é inválido";
             }
         }
         
         
         $email = "exemplo@dominio.com";
-        if (validarEmail($email)) {
-            echo "O e-mail '$email' é válido.";
-        } else {
-            echo "O e-mail '$email' é inválido.";
-        }
-        
-        
-        $email_invalido = "exemplo@dominio";
-        if (validarEmail($email_invalido)) {
-            echo "O e-mail '$email_invalido' é válido.";
-        } else {
-            echo "O e-mail '$email_invalido' é inválido.";
-        }
+        echo validarEmail($email)
 ?>
